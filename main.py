@@ -42,21 +42,25 @@ def operacion(numero1):
 
 while True:
     menu()
-    opcion = int(input("Ingrese una opción: "))
+    opcion = input("Ingrese una opción: ")
 
-    if opcion == 10:
-        break
-    elif opcion == 5:
-        num1 = float(input("Introduce el numero como base:"))
-        num2 = float(input("Introduce el numero para exponente:"))
-        operaciones(num1, num2)
-
-    elif opcion == 6 or opcion == 7 or opcion == 8 or opcion == 9:
-        num1 = float(input("Introduce el número: "))
-        operacion(num1)
-
+    if opcion.isnumeric():
+        opcion = int(opcion)
+        if opcion == 10:
+            print("¡Hasta pronto! :)")
+            exit(0)
+        elif opcion == 5:
+            num1 = float(input("Introduce el numero como base:"))
+            num2 = float(input("Introduce el numero para exponente:"))
+            operaciones(num1, num2)
+        elif opcion == 6 or opcion == 7 or opcion == 8 or opcion == 9:
+            num1 = float(input("Introduce el número: "))
+            operacion(num1)
+        elif opcion == 1 or opcion == 2 or opcion == 3 or opcion == 4 or opcion == 5:
+            num1 = float(input("Introduce tu primer número:"))
+            num2 = float(input("Introduce tu segundo número:"))
+            operaciones(num1, num2)
+        else:
+            print("Por favor ingrasa una opcion de la lista")
     else:
-        num1 = float(input("Introduce tu primer número:"))
-        num2 = float(input("Introduce tu segundo número:"))
-        operaciones(num1, num2)
-
+        print("Por favor ingrasa una opcion de la lista")
